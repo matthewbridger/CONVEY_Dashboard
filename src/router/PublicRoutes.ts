@@ -14,12 +14,6 @@ const PublicRoutes = {
             path: '/signin',
             component: () => import('../views/auth/SignIn.vue')
         },
-        
-        {
-            name: 'ForgotPassword',
-            path: '/forgot-password',
-            component: () => import('../views/auth/ForgotPassword.vue')
-        },
     ]
 };
 

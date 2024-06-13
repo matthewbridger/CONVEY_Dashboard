@@ -1,4 +1,4 @@
-import Home from '../views/home/index.vue';
+import Home from '../views/home/Index.vue';
 
 const PrivateRoutes = {
     path: '/',

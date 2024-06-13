@@ -1,55 +1,32 @@
 <template>
-    <v-container class="auth-container" max-width="400">
-      <v-card>
-        <v-card-title>Sign Up</v-card-title>
-        <v-card-text>
-          <v-form @submit.prevent="handleSubmit">
-            <v-text-field
-              v-model="email"
-              label="Email"
-              type="email"
-              required
-            ></v-text-field>
-            <v-text-field
-              v-model="password"
-              label="Password"
-              type="password"
-              required
-            ></v-text-field>
-            <v-text-field
-              v-model="confirmPassword"
-              label="Confirm Password"
-              type="password"
-              required
-            ></v-text-field>
-            <v-btn type="submit" color="success" block>Sign Up</v-btn>
-          </v-form>
-        </v-card-text>
-      </v-card>
-    </v-container>
-  </template>
-  
-  <script setup lang="ts">
-  import { ref } from 'vue';
-  
-  const email = ref('');
-  const password = ref('');
-  const confirmPassword = ref('');
-  
-  const handleSubmit = () => {
-    if (password.value !== confirmPassword.value) {
-      alert('Passwords do not match');
-      return;
-    }
-    console.log('Sign Up:', { email: email.value, password: password.value });
-    // Add your sign-up logic here
-  };
-  </script>
-  
-  <style scoped>
-  .auth-container {
-    margin: 0 auto;
-    padding: 1rem;
-  }
-  </style>
-  
+    <div class="authentication">
+        <v-container fluid class="pa-3">
+            <v-row class="h-100vh d-flex justify-center align-center">
+                <v-col cols="12" class="d-flex align-center">
+                    <v-card rounded="md" elevation="10" class="px-sm-1 px-0  mx-auto" max-width="450">
+                        <v-card-item class="pa-sm-8">
+                            <div class="d-flex justify-center py-4 mb-5">
+                                <v-img max-height="250px" src="/assets/images/logo/full.png" alt="Logo"></v-img>
+                            </div>
+                            
+                            <SignUpForm />
+
+                            <h6 class="text-h6 text-medium-emphasis d-flex justify-center align-center mt-3">
+                                Already have an Account?
+                                <v-btn
+                                    variant="plain"
+                                    to="/signin"
+                                    class="text-primary text-body-1 opacity-1 pl-2"
+                                >Sign In</v-btn>
+                            </h6>
+                        </v-card-item>
+                    </v-card>
+                </v-col>
+            </v-row>
+        </v-container>
+    </div>
+</template>
+
+<script setup lang="ts">
+import SignUpForm from '../../components/auth/SignUpForm.vue';
+</script>
