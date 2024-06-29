@@ -25,7 +25,7 @@
                      class="d-flex"
                      style="text-decoration: none;"
                   >
-                     <v-img contain max-width="36px" src="../../../public/assets/images/logo/full.png" alt="Logo"></v-img>
+                     <v-img contain max-width="36px" src="../../assets/images/logo/full.png" alt="Logo"></v-img>
                   </router-link>
                </v-toolbar-title>
             </v-col>
@@ -51,19 +51,20 @@
          style="z-index: 9999;"
       >
          <!-- Profile Header -->
-         <div class="py-6">
+         <div class="py-6" style="position: relative;">
+            <v-btn @click="navDraw.show = !navDraw.show" icon="mdi-close-circle" variant="plain" style="position: absolute; top: 0; right: 0;" />
             <router-link
-               :to="{ name: 'Home' }"
-               class="d-flex flex-column align-center"
-               style="text-decoration: none;"
+                :to="{ name: 'Home' }"
+                class="d-flex flex-column align-center"
+                style="text-decoration: none;"
             >
-               <v-avatar size="100">
-                  <v-img src="/assets/images/user/default.png" />
-               </v-avatar>
-
-               <h4 class="mt-1">{{ `${user?.firstName[0]} ${user?.lastName[0]}` }}</h4>
+                <v-avatar size="100">
+                    <v-img src="../../assets/user/default.png" />
+                </v-avatar>
+        
+                <h4 class="mt-1">{{ `${user?.firstName[0]} ${user?.lastName[0]}` }}</h4>
             </router-link>
-         </div>
+        </div>
  
          <v-divider/>
  
