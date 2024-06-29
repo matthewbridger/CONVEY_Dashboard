@@ -70,7 +70,7 @@ export default defineComponent({
         const response = await sign_in(email, password);
     
         if(response.success == true) {
-            this.$router.push({ name: 'Dashboard' });
+            this.$router.push({ name: 'Home' });
         }
         else {
             this.sign_in_failed_error_message = response.error_message;

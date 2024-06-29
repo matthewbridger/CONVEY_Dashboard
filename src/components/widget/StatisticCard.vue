@@ -107,9 +107,21 @@ export default defineComponent({
             }
         },
 
-        parseDate(date: any) {
-            return format(parseISO(date), 'dd-MM-yyyy HH:mm');
+
+        parseDate(date) {
+            
+            // Check if the date is undefined or not a string
+            if (typeof date !== 'string' || date.trim() === '') {
+                return 0;
+            }         
+            // Parse the date string into a Date object
+            const parsedDate = parseISO(date);
+            return format(parsedDate, 'dd-MM-yyyy HH:mm');
         },
+
+        // parseDate(date: any) {
+        //     return format(parseISO(date), 'dd-MM-yyyy HH:mm');
+        // },
 
         clickGoToList() {
             this.$router.push({

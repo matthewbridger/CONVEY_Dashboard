@@ -6,6 +6,7 @@ const PrivateRoutes = {
         requiresAuth: true
     },
     redirect: '/',
+    component: () => import('../layouts/private/AppContainer.vue'),
     children: [
         {
             name: 'Home',

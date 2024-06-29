@@ -35,6 +35,20 @@ export default defineComponent({
     data() {
         return {
             statisticCardWidgets: [
+                { 
+                    title: 'Customers',
+                    target: 'customers',
+                    label: 'name',
+                    goToEdit: 'CustomerEdit',
+                    goToList: 'Customers'
+                },
+                {
+                    title: 'Products',
+                    target: 'products',
+                    label: 'title',
+                    goToEdit: 'ProductEdit',
+                    goToList: 'Products'
+                },
                 {
                     title: 'Users',
                     target: 'users',
