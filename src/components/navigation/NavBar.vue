@@ -54,7 +54,7 @@
          <div class="py-6" style="position: relative;">
             <v-btn @click="navDraw.show = !navDraw.show" icon="mdi-close-circle" variant="plain" style="position: absolute; top: 0; right: 0;" />
             <router-link
-                :to="{ name: 'Home' }"
+                :to="{ name: 'Account' }"
                 class="d-flex flex-column align-center"
                 style="text-decoration: none;"
             >

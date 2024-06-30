@@ -13,6 +13,17 @@ const PrivateRoutes = {
             path: '',
             component: Home
         },
+        {
+            path: '/account',
+            component: () => import('../layouts/private/RouteContainer.vue'),
+            children: [
+                {
+                    name: 'Account',
+                    path: '',
+                    component: () => import('../views/account/Index.vue')
+                },
+            ]
+        },
     ]
 };
 
