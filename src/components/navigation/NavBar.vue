@@ -80,7 +80,7 @@
 
                <router-link
                   :to="{ name: route.to }"
-                  style="text-decoration: none; color: black;"
+                  style="color: black;"
                >{{ route.title }}</router-link>
             </v-list-item>
          </v-list>
