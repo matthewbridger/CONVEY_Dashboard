@@ -107,9 +107,9 @@ export default defineComponent({
             show: false,
             routes: [
                { title: 'Dashboard', icon: 'mdi-view-dashboard', to: 'Home' },
-               { title: 'Customers', icon: 'mdi-account-cash', to: '' },
-               { title: 'Products', icon: 'mdi-store', to: '' },
-               { title: 'Users', icon: 'mdi-account-group', to: '' },
+               { title: 'Customers', icon: 'mdi-account-cash', to: 'Customer' },
+               { title: 'Products', icon: 'mdi-store', to: 'Product' },
+               { title: 'Users', icon: 'mdi-account-group', to: 'User' },
             ],
          },
       }

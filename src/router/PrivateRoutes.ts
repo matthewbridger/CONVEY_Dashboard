@@ -15,12 +15,41 @@ const PrivateRoutes = {
         },
         {
             path: '/account',
-            component: () => import('../layouts/private/RouteContainer.vue'),
             children: [
                 {
                     name: 'Account',
                     path: '',
                     component: () => import('../views/account/Index.vue')
+                },
+            ]
+        },
+        {
+            path: '/user',
+            children: [
+                {
+                    name: 'User',
+                    path: '',
+                    component: () => import('../views/users/Index.vue')
+                },
+            ]
+        },
+        {
+            path: '/product',
+            children: [
+                {
+                    name: 'Product',
+                    path: '',
+                    component: () => import('../views/products/Index.vue')
+                },
+            ]
+        },
+        {
+            path: '/customer',
+            children: [
+                {
+                    name: 'Customer',
+                    path: '',
+                    component: () => import('../views/customers/Index.vue')
                 },
             ]
         },
