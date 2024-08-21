@@ -3,13 +3,33 @@
         :title="title"
         :breadcrumbs="breadcrumbs"
     ></BaseBreadcrumb>
+    <div v-if="!gettingData">
+        <v-card>
+            <v-card-text>
+                <v-text-field
+                    v-model="search"
+                    label="Search"
+                    prepend-inner-icon="mdi-magnify"
+                    variant="outlined"
+                    hide-details
+                    single-line
+                ></v-text-field>
 
-    <div>
-        <DataTable
-            :headers="headers"
-            :items="userList"
-            :error-message="errorMessage"
-        ></DataTable>
+                <DataTable
+                    :headers="headers"
+                    :items="userList"
+                    :error-message="errorMessage"
+                    :search="search"
+                    @deleteHandler="deleteUser($event)"
+                    @restoreHandler="restoreUser($event)"
+
+                ></DataTable>
+            </v-card-text>
+
+            <v-card-actions v-if="errorMessage">
+                error: {{ errorMessage }}
+            </v-card-actions>
+        </v-card>
     </div>
 </template>
 
@@ -32,6 +52,8 @@ export default defineComponent({
             title: 'User Accounts',
             errorMessage: '' as string,
             userList: [] as User[],
+            search: '' as string,
+            gettingData: false as Boolean,
         }
     },
 
@@ -62,11 +84,15 @@ export default defineComponent({
 
     methods: {
         async getUserList(): Promise<void> {
+            this.gettingData = true;
             try {
                 const response = await UserController.get_list();
                 this.userList = response.data as User[];
             } catch (error: any) {
                 this.errorMessage = error.message || 'Failed to fetch users';
+            }
+            finally{
+                this.gettingData = false;
             }
         },
 

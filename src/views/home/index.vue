@@ -13,14 +13,10 @@
                 :label="statisticCardWidget.label"
                 :goToEdit="statisticCardWidget.goToEdit"
                 :goToList="statisticCardWidget.goToList"
-                style="height: 100%;"
             />
         </v-col>
     </v-row>
 
-    <v-row class="pa-4">
-        TODO - Activity Logs
-    </v-row>
 </template>
 
 <script lang="ts">

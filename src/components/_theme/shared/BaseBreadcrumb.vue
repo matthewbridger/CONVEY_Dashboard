@@ -7,7 +7,7 @@ const props = defineProps({
 </script>
 
 <template>
-    <v-card class="bg-primary">
+    <v-card class="bg-primary mb-2">
         <div class="px-8 py-5">
             <h3 class="text-h3 mb-2">{{ title }}</h3>
             <v-breadcrumbs :items="breadcrumbs" class="pa-0 ml-n1">

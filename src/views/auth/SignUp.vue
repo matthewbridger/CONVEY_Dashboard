@@ -6,7 +6,7 @@
                     <v-card rounded="md" elevation="10" class="px-sm-1 px-0  mx-auto" max-width="450">
                         <v-card-item class="pa-sm-8">
                             <div class="d-flex justify-center py-4 mb-5">
-                                <v-img max-height="250px" src="/assets/images/logo/full.png" alt="Logo"></v-img>
+                                <v-img max-height="250px" src="../../assets/logo.png" alt="Logo"></v-img>
                             </div>
                             
                             <SignUpForm />
