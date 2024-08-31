@@ -6,22 +6,21 @@
     >
         <template v-slot:item._actions_="{ item }">
             <v-icon
-                @click="$emit('editHandler', item.selectable)"
+                @click="$emit('editHandler', item)"
                 size="small"
-                color="red"
             >mdi-pencil</v-icon>
 
             <v-icon
-                v-if="item.selectable && item.selectable.isDeleted === false"
-                @click="$emit('deleteHandler', item.selectable)"
+                v-if="item&& item.isDeleted === false"
+                @click="$emit('deleteHandler', item)"
                 size="small"
                 color="error"
                 class="ml-2"
             >mdi-delete</v-icon>
 
             <v-icon
-                v-else-if="item.selectable && item.selectable.isDeleted === true"
-                @click="$emit('restoreHandler', item.selectable)"
+                v-else-if="item && item.isDeleted === true"
+                @click="$emit('restoreHandler', item)"
                 size="small"
                 color="info"
                 class="ml-2"

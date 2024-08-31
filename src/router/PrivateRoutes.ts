@@ -41,6 +41,16 @@ const PrivateRoutes = {
                     path: '',
                     component: () => import('../views/products/Index.vue')
                 },
+                {
+                    name: 'ProductAdd',
+                    path: 'add',
+                    component: () => import('@/views/products/Create.vue')
+                },
+                {
+                    name: 'ProductEdit',
+                    path: 'edit/:id',
+                    component: () => import('@/views/products/Edit.vue')
+                },
             ]
         },
         {

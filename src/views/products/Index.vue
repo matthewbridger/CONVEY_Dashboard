@@ -15,14 +15,19 @@
                     single-line
                 ></v-text-field>
 
+                <div class="mt-3 d-flex justify-start">
+                    <v-btn @click="goToProductAddView()" color="info" variant="outlined">add new product</v-btn>
+                </div>
+
                 <DataTable
                     :headers="headers"
                     :items="productList"
                     :error-message="errorMessage"
                     :search="search"
+                    @editHandler="goToProductEditView($event)"
                     @deleteHandler="deleteUser($event)"
                     @restoreHandler="restoreUser($event)"
-
+                    :hover="true"
                 ></DataTable>
             </v-card-text>
 
@@ -102,6 +107,12 @@ export default defineComponent({
             }
         },
 
+        async goToProductAddView(): Promise<void> {
+           this.$router.push({
+                name: 'ProductAdd',
+           });
+        },
+
         async deleteProduct(product: any): Promise<void> {
             try {
                 await ProductController.soft_delete(product.id);
@@ -123,7 +134,13 @@ export default defineComponent({
                 this.errorMessage = error;
             }
         },
-    }
 
+        async goToProductEditView(product: any): Promise<void> {          
+           this.$router.push({
+                name: 'ProductEdit',
+                params: { id: product.id }
+           });
+        },
+    }
 });
 </script>
